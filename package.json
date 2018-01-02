@@ -1,0 +1,37 @@
+{
+    "name": "landmarkspace",
+    "version": "1.0.0",
+    "description": "Social site for students",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "compile": "babel client/src --presets react,env --out-dir client/public ",
+        "watch": "babel client/src --presets react,env --out-dir client/public --watch",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ikenjoku/LandmarkSpace.git"
+    },
+    "author": "Ike Njoku",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ikenjoku/LandmarkSpace/issues"
+    },
+    "homepage": "https://github.com/ikenjoku/LandmarkSpace#readme",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "mongoose": "^5.0.0-rc0",
+        "morgan": "^1.9.0",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "react-redux": "^5.0.6",
+        "redux": "^3.7.2"
+    },
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-env": "^1.6.1"
+    }
+}
