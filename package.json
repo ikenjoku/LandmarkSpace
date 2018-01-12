@@ -4,9 +4,9 @@
     "description": "Social site for students",
     "main": "index.js",
     "scripts": {
-        "start": "node server/server.js",
-        "compile": "babel client/src --presets react,env --out-dir client/public ",
-        "watch": "babel client/src --presets react,env --out-dir client/public --watch",
+        "start": "nodemon -w server server/server.js",
+        "compile": "webpack",
+        "watch": "webpack --watch",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -32,7 +32,10 @@
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "^1.6.1",
         "babel-preset-react": "^6.24.1",
-        "babel-preset-env": "^1.6.1"
+        "nodemon": "^1.14.11",
+        "webpack": "^3.10.0"
     }
 }
