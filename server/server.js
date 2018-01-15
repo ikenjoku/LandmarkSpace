@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const app = express()
 const path = require('path');
 const logger = require('morgan');
@@ -6,6 +6,10 @@ const errorhandler = require('errorhandler');
 const PORT = process.env.PORT || 4500;
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+
+import 'babel-polyfill';
+import SourceMapSupport from 'source-map-support';
+SourceMapSupport.install();
 
 const adsRouter = require('./routes/adsRouter');
 const postsRouter = require('./routes/postsRouter');
@@ -19,10 +23,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const connect = mongoose.connect(keys.mongoURI);
 
-app.use('/ads', adsRouter);
-app.use('/posts', postsRouter);
-app.use('/events', eventsRouter);
-app.use('/buzzes', buzzesRouter);
+app.use('/api/v1/ads', adsRouter);
+app.use('/api/v1/posts', postsRouter);
+app.use('/api/v1/events', eventsRouter);
+app.use('/api/v1/buzzes', buzzesRouter);
 app.use(express.static(path.join('client', 'public')));
 
 app.use((err, req, res, next) => {
@@ -30,7 +34,6 @@ app.use((err, req, res, next) => {
     console.log(err.message);
     res.status(status).send(err.message);
 });
-
 
 connect.then((db) => {
     console.log('Connected freshly to MongoDB!');
