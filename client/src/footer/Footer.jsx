@@ -1,16 +1,16 @@
 import React, {Component} from "react";
 
 
-export default class BuzzList extends React.Component{
+export default class Footer extends React.Component{
     constructor(){
         super();
 
     }
     render(){
         return (
-            <aside>
-                Buzzers
-            </aside>
+            <footer>
+                Footer
+            </footer>
         );
     }
 }

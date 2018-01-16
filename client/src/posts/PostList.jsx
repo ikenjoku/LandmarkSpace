@@ -35,20 +35,10 @@ export class PostList extends React.Component{
         const postRows = this.state.posts.map(post => <PostListItem key={post._id} post={post} />);
 
         return(
-            <div>
+            <article className="postArticle">
             <h4>List of Posts</h4>
-            <table>
-            <thead>
-                <tr>
-                    <th>Author</th>
-                    <th>Title</th>
-                </tr>
-            </thead>
-            <tbody>
                 {postRows}
-            </tbody>
-        </table>
-            </div>
+            </article>
         );
     }
 }

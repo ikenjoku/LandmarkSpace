@@ -1,20 +1,33 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import {PostList} from './posts/PostList.jsx';
+import NavBar from "./navBar/NavBar.jsx";
+import BuzzList from "./buzzes/BuzzList.jsx";
+import Footer from "./footer/Footer.jsx";
+import EventList from "./events/EventList.jsx";
+import AdList from "./ads/AdList.jsx";
 
-class Hello extends React.Component{
+class App extends React.Component{
     render(){
         return(
             <div className='container-fluid'>
-                <h4>LandMarkSpace Landing Page</h4>
-                <PostList/>
+                <NavBar/>
+                <main>
+                <BuzzList/>
+                <section>
+                    <PostList/>
+                    <EventList/>
+                    <AdList/>
+                </section>
+                </main>
+                <Footer />
             </div>
         );
     }
 }
 
-ReactDOM.render(<Hello />, document.querySelector('#contents'));
+ReactDOM.render(<App />, document.querySelector('#contents'));
 
 
 if (module.hot){
